@@ -24,7 +24,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void ConvertNumber_ConvertsADoubleDigit_String()
+    public void ConvertNumber_ConvertsADoubleDigitFrom10to19_String()
     {
       NumberToConvert newNumberToConvert = new NumberToConvert(14);
       newNumberToConvert.ConvertNumber();
