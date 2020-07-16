@@ -11,8 +11,16 @@ namespace NumbersToWords.Tests
     [TestMethod]
     public void NumberToConvertConstructor_CreatesInstanceOfNumberToConvert_NumberToConvert()
     {
-      NumberToConvert newNumberToConvert = new NumberToConvert();
+      NumberToConvert newNumberToConvert = new NumberToConvert(1);
       Assert.AreEqual(typeof(NumberToConvert), newNumberToConvert.GetType());
+    }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsASingleDigit_One()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(1);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("one", newNumberToConvert.StringNumber);
     }
   }
 }
