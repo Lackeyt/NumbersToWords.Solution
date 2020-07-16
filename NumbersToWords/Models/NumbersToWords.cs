@@ -49,9 +49,14 @@ namespace NumbersToWords.Models
         long millionsPlace = (input - (input % 1000000)) / 1000000;
         return (ConvertDigits(millionsPlace) + " million " + ConvertDigits(input % 1000000));
       }
+      else if (input < 1000000000000)
+      {
+        long billionsPlace = (input - (input % 1000000000)) / 1000000000;
+        return (ConvertDigits(billionsPlace) + " billion " + ConvertDigits(input % 1000000000));
+      }
       else
       {
-        return "not available yet";
+        return "One Trillion+";
       }
     }
   }
