@@ -1,11 +1,14 @@
 # Words to Numbers
-
+Version 1.0 - July 16, 2020. 
 
 ## Project Description
-Description.
+Practice using C# and dotnet.
 
 ## Contributors
 JohnNils Olson, Tyson Lackey, Micheal Hansen
+
+## Usage
+User can input a number up to 12 digits and have the number printed out as words.
 
 ## Behavior Specifications
 | Behavior | Input | Output |
@@ -14,12 +17,9 @@ JohnNils Olson, Tyson Lackey, Micheal Hansen
 |Program will take a user inputted double digit number and return the word form| 14 | "Fourteen" |
 |Program will take a user inputted triple digit number and return the word form| 147 | "One Hundred Forty Seven" |
 
-
-## Usage
-Program usage.
-
 ## Technologies Used
-Technologies used.
+C#
+dotnet
 
 ## Installation Instructions
 * Cloning instructions.
