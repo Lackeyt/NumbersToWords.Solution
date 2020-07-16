@@ -38,5 +38,13 @@ namespace NumbersToWords.Tests
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("twenty", newNumberToConvert.StringNumber);
     }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsADoubleDigitFrom100To999_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(367);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("three hundred sixty seven", newNumberToConvert.StringNumber);
+    }
   }
 }
