@@ -30,5 +30,13 @@ namespace NumbersToWords.Tests
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("fourteen", newNumberToConvert.StringNumber);
     }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsADoubleDigitFrom20To99_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(26);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("twenty six", newNumberToConvert.StringNumber);
+    }
   }
 }
