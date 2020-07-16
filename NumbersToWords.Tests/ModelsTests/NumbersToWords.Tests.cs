@@ -34,9 +34,9 @@ namespace NumbersToWords.Tests
     [TestMethod]
     public void ConvertNumber_ConvertsADoubleDigitFrom20To99_String()
     {
-      NumberToConvert newNumberToConvert = new NumberToConvert(26);
+      NumberToConvert newNumberToConvert = new NumberToConvert(20);
       newNumberToConvert.ConvertNumber();
-      Assert.AreEqual("twenty six", newNumberToConvert.StringNumber);
+      Assert.AreEqual("twenty", newNumberToConvert.StringNumber);
     }
   }
 }
