@@ -40,11 +40,19 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void ConvertNumber_ConvertsADoubleDigitFrom100To999_String()
+    public void ConvertNumber_ConvertsATripleDigitFrom100To999_String()
     {
       NumberToConvert newNumberToConvert = new NumberToConvert(367);
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("three hundred sixty seven", newNumberToConvert.StringNumber);
+    }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsAFourToSixDigitFrom1000To999999_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(654321);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("six hundred fifty four thousand three hundred twenty one", newNumberToConvert.StringNumber);
     }
   }
 }
