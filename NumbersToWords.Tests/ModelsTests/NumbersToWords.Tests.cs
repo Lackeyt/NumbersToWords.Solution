@@ -22,5 +22,13 @@ namespace NumbersToWords.Tests
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("one", newNumberToConvert.StringNumber);
     }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsADoubleDigit_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(14);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("fourteen", newNumberToConvert.StringNumber);
+    }
   }
 }
