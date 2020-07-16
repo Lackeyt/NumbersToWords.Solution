@@ -37,6 +37,11 @@ namespace NumbersToWords.Models
         int tensPlace = input - onePlace;
         return (_tensPlaceStringifier[tensPlace] + " " + _digitStringifier[onePlace]).Trim();
       }
+      else if (input < 1000)
+      {
+        int hundredsPlace = (input - (input % 100)) / 100;
+        return (_digitStringifier[hundredsPlace] + " " + "hundred" + " " + ConvertDigits(input % 100));
+      }
       else
       {
         return "not available yet";
