@@ -54,5 +54,13 @@ namespace NumbersToWords.Tests
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("six hundred fifty four thousand three hundred twenty one", newNumberToConvert.StringNumber);
     }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsASevenToNineDigitFrom1000000To999999999_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(234654321);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("two hundred thirty four million six hundred fifty four thousand three hundred twenty one", newNumberToConvert.StringNumber);
+    }
   }
 }
