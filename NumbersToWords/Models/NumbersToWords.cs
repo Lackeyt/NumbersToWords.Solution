@@ -44,6 +44,11 @@ namespace NumbersToWords.Models
         int thousandsPlace = (input - (input % 1000)) / 1000;
         return (ConvertDigits(thousandsPlace) + " thousand " + ConvertDigits(input % 1000));
       }
+      else if (input < 1000000000)
+      {
+        int millionsPlace = (input - (input % 1000000)) / 1000000;
+        return (ConvertDigits(millionsPlace) + " million " + ConvertDigits(input % 1000000));
+      }
       else
       {
         return "not available yet";
