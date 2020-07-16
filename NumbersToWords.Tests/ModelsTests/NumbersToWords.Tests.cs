@@ -62,5 +62,13 @@ namespace NumbersToWords.Tests
       newNumberToConvert.ConvertNumber();
       Assert.AreEqual("two hundred thirty four million six hundred fifty four thousand three hundred twenty one", newNumberToConvert.StringNumber);
     }
+
+    [TestMethod]
+    public void ConvertNumber_ConvertsA10To12DigitFrom1000000000To999999999999_String()
+    {
+      NumberToConvert newNumberToConvert = new NumberToConvert(123234654321);
+      newNumberToConvert.ConvertNumber();
+      Assert.AreEqual("one hundred twenty three billion two hundred thirty four million six hundred fifty four thousand three hundred twenty one", newNumberToConvert.StringNumber);
+    }
   }
 }
