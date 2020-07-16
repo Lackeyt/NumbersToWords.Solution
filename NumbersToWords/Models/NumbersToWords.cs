@@ -32,27 +32,27 @@ namespace NumbersToWords.Models
       {
         long onePlace = input % 10;
         long tensPlace = input - onePlace;
-        return (_tensPlaceStringifier[tensPlace] + " " + _digitStringifier[onePlace]);
+        return (_tensPlaceStringifier[tensPlace] + " " + _digitStringifier[onePlace]).Trim();
       }
       else if (input < 1000)
       {
         long hundredsPlace = (input - (input % 100)) / 100;
-        return (_digitStringifier[hundredsPlace] + " hundred " + ConvertDigits(input % 100));
+        return (_digitStringifier[hundredsPlace] + " hundred " + ConvertDigits(input % 100)).Trim();
       }
       else if (input < 1000000)
       {
         long thousandsPlace = (input - (input % 1000)) / 1000;
-        return (ConvertDigits(thousandsPlace) + " thousand " + ConvertDigits(input % 1000));
+        return (ConvertDigits(thousandsPlace) + " thousand " + ConvertDigits(input % 1000)).Trim();
       }
       else if (input < 1000000000)
       {
         long millionsPlace = (input - (input % 1000000)) / 1000000;
-        return (ConvertDigits(millionsPlace) + " million " + ConvertDigits(input % 1000000));
+        return (ConvertDigits(millionsPlace) + " million " + ConvertDigits(input % 1000000)).Trim();
       }
       else if (input < 1000000000000)
       {
         long billionsPlace = (input - (input % 1000000000)) / 1000000000;
-        return (ConvertDigits(billionsPlace) + " billion " + ConvertDigits(input % 1000000000));
+        return (ConvertDigits(billionsPlace) + " billion " + ConvertDigits(input % 1000000000)).Trim();
       }
       else
       {
