@@ -12,13 +12,10 @@ namespace NumbersToWords.Models
     public NumberToConvert(int input)
     {
       Input = input;
-      StringNumber = "";
     }
-    public string ConvertNumber()
+    public void ConvertNumber()
     {
-      string digitString = ConvertDigits(Input);
-      StringNumber = digitString + StringNumber;
-      return StringNumber;
+      StringNumber = (ConvertDigits(Input)).Trim();
     }
 
     private string ConvertDigits(int input)
@@ -35,12 +32,17 @@ namespace NumbersToWords.Models
       {
         int onePlace = input % 10;
         int tensPlace = input - onePlace;
-        return (_tensPlaceStringifier[tensPlace] + " " + _digitStringifier[onePlace]).Trim();
+        return (_tensPlaceStringifier[tensPlace] + " " + _digitStringifier[onePlace]);
       }
       else if (input < 1000)
       {
         int hundredsPlace = (input - (input % 100)) / 100;
-        return (_digitStringifier[hundredsPlace] + " " + "hundred" + " " + ConvertDigits(input % 100));
+        return (_digitStringifier[hundredsPlace] + " hundred " + ConvertDigits(input % 100));
+      }
+      else if (input < 1000000)
+      {
+        int thousandsPlace = (input - (input % 1000)) / 1000;
+        return (ConvertDigits(thousandsPlace) + " thousand " + ConvertDigits(input % 1000));
       }
       else
       {
