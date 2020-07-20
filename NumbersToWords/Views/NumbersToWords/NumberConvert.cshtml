@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Converter</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/convert" method="post">
+        <div class="form-group">
+          <label for="numberToConvert">Enter A Number To Convert</label>
+          <input id="numberToConvert" name="numberToConvert" type="number" class="form-control">
+          <button class="btn btn-success" type="submit">Convert!</button>
+        </div>
+      </form>
+      @if (Model != null)
+      {
+        <p>@Model.StringNumber</p>
+      }
+    </div>
+  </body>
+</html>
