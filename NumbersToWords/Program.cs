@@ -1,17 +1,20 @@
-using System;
-using NumbersToWords.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace NumbersToWords
 {
   public class NumbersToWordsProgram
   {
-    public static void Main()
+    public static void Main(string[] args)
     {
-      Console.WriteLine("Input number to convert");
-      long input = long.Parse(Console.ReadLine());
-      NumberToConvert numObj = new NumberToConvert(input);
-      numObj.ConvertNumber();
-      Console.WriteLine(numObj.StringNumber);
+      var host = new WebHostBuilder()
+        .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseIISIntegration()
+        .UseStartup<Startup>()
+        .Build();
+
+      host.Run();
     }
   }
 }
