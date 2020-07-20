@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using NumbersToWords.Models;
 
 namespace NumbersToWords.Controllers
 {
